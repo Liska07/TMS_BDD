@@ -1,4 +1,3 @@
-using NLog;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using SpecFlowProject.Pages;
@@ -70,6 +69,5 @@ namespace SpecFlowProject.StepDefinitions
         {
             Assert.That(_loginPage.GetLoginErrorMessage(), Is.EqualTo(expectedErrorMessage));
         }
-
     }
 }

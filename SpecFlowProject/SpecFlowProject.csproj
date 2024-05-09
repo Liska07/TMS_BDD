@@ -7,20 +7,33 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="appsettings.json" />
-    <None Remove="NLog.config" />
+    <Content Remove="C:\Users\Liska\.nuget\packages\allure.specflow\2.12.0\contentFiles\any\netstandard2.0\allureConfig.Template.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="allureConfig.json" />
+    <None Remove="appsettings.json" />
+    <None Remove="NLog.config" />
+    <None Remove="specflow.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="allureConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="specflow.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Allure.SpecFlow" Version="2.12.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
     <PackageReference Include="NLog" Version="5.3.2" />
     <PackageReference Include="NLog.Schema" Version="5.3.2" />
