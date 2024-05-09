@@ -36,8 +36,9 @@ namespace SpecFlowProject.Pages
             {
                 return LoginButton().Displayed;
             }
-            catch
+            catch (Exception ex)
             {
+                logger.Error("'Login Button' on the 'Login Page' is  not displayed! " + ex);
                 return false;
             }
         }

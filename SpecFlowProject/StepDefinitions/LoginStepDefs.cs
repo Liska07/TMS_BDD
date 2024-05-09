@@ -1,3 +1,4 @@
+using NLog;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using SpecFlowProject.Pages;
