@@ -12,7 +12,8 @@ namespace SpecFlowProject.Steps
 
         public DashboardPage SuccessfulLogin()
         {
-            Login(Configurator.ReadConfiguration().UserName, Configurator.ReadConfiguration().Password);
+            Login(EnvironmentHelper.GetEnvironmentVariableOrThrow("TESTRAIL_USERNAME"),
+                EnvironmentHelper.GetEnvironmentVariableOrThrow("TESTRAIL_PASSWORD"));
             return dashboardPage;
         }
 

@@ -23,7 +23,7 @@ namespace SpecFlowProject.Pages
 
         protected override void ExecuteLoad()
         {
-            driver.Navigate().GoToUrl(Configurator.ReadConfiguration().TestRailURL + GetEndpoint());
+            driver.Navigate().GoToUrl(Configurator.GetBaseURL() + GetEndpoint());
         }
     }
 }

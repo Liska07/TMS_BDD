@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
+using SpecFlowProject.Core;
 using SpecFlowProject.Pages;
 using SpecFlowProject.Steps;
 
@@ -16,7 +17,7 @@ namespace SpecFlowProject.StepDefinitions
         [BeforeScenario]
         public void BeforeScenario()
         {
-            BaseStepDefs.Driver = new ChromeDriver();
+            BaseStepDefs.Driver = new Browser().Driver;
         }
 
         [AfterScenario]
