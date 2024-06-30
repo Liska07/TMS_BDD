@@ -20,20 +20,20 @@ namespace SpecFlowProject.Element
         {
             get
             {
-                if (_element.Text == null)
+                if (string.IsNullOrEmpty(_element.Text))
                 {
                     if (GetAttribute("value") == null)
                     {
-                        return GetAttribute("innertext");
+                        return GetAttribute("innertext").Trim();
                     }
                     else
                     {
-                        return GetAttribute("value");
+                        return GetAttribute("value").Trim();
                     }
                 }
                 else
                 {
-                    return _element.Text;
+                    return _element.Text.Trim();
                 }
             }
         }
@@ -109,15 +109,15 @@ namespace SpecFlowProject.Element
             _element.SendKeys(text);
             try
             {
-                if (_element.GetAttribute("value") != text)
+                if (_element.GetAttribute("value") != null && _element.GetAttribute("value") != text)
                 {
+                    _element.Clear();
                     _actions
-                        .MoveToElement(_element)
-                        .Click()
-                        .SendKeys("")
-                        .SendKeys(text)
-                        .Build()
-                        .Perform();
+                    .MoveToElement(_element)
+                    .Click()
+                    .SendKeys(text)
+                    .Build()
+                    .Perform();
                     _logger.Warn("Sent keys using actions");
                 }
             }

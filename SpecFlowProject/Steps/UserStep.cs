@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using SpecFlowProject.Pages;
 using SpecFlowProject.Utils;
 
 namespace SpecFlowProject.Steps
@@ -10,19 +9,19 @@ namespace SpecFlowProject.Steps
         {
         }
 
-        public DashboardPage SuccessfulLogin()
+        public void SuccessfulLogin()
         {
             Login(EnvironmentHelper.GetEnvironmentVariableOrThrow("TESTRAIL_USERNAME"),
                 EnvironmentHelper.GetEnvironmentVariableOrThrow("TESTRAIL_PASSWORD"));
-            return dashboardPage;
+            logger.Info("Successful login");
         }
 
-        public LoginPage UnsuccessfulLogin(string userName = "", string password = "")
+        public void UnsuccessfulLogin(string userName = "", string password = "")
         {
             Login(userName, password);
-            return loginPage;
         }
-        public void Login(string userName, string password)
+
+        private void Login(string userName, string password)
         {
             loginPage.UserNameField().SendKeys(userName);
             loginPage.PasswordFeld().SendKeys(password);

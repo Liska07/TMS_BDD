@@ -11,5 +11,6 @@ namespace SpecFlowProject.Element
         }
         public bool Displayed => _uiElement.Displayed;
         public string Text => _uiElement.Text;
+        public string GetAttribute(string attributeName) => _uiElement.GetAttribute(attributeName);
     }
 }

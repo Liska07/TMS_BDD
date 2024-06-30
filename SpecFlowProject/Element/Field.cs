@@ -2,16 +2,15 @@
 
 namespace SpecFlowProject.Element
 {
-    public class Button
+    public class Field
     {
         private readonly UiElement _uiElement;
-
-        public Button(IWebDriver driver, By locator)
+        public Field(IWebDriver driver, By locator)
         {
             _uiElement = new UiElement(driver, locator);
         }
+        public void SendKeys(string text) => _uiElement.SendKeys(text);
         public void Click() => _uiElement.Click();
-        public void Submit() => _uiElement.Submit();
         public bool Displayed => _uiElement.Displayed;
         public bool Enabled => _uiElement.Enabled;
         public string Text => _uiElement.Text;

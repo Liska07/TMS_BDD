@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NLog;
+using OpenQA.Selenium;
 using SpecFlowProject.Pages;
 
 namespace SpecFlowProject.Steps
@@ -7,12 +8,11 @@ namespace SpecFlowProject.Steps
     {
         protected IWebDriver driver;
         protected LoginPage loginPage;
-        protected DashboardPage dashboardPage;
+        protected readonly Logger logger = LogManager.GetCurrentClassLogger();
         public BaseStep(IWebDriver driver)
         {
             this.driver = driver;
             loginPage = new LoginPage(driver);
-            dashboardPage = new DashboardPage(driver);
         }
     }
 }

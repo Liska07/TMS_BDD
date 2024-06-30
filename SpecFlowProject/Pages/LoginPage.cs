@@ -17,12 +17,12 @@ namespace SpecFlowProject.Pages
         public LoginPage(IWebDriver driver) : base(driver)
         {
         }
-        public UiElement UserNameField() => new UiElement(driver, _userNameFieldBy);
-        public string GetUserNameErrorMessage() => new Message(driver, _userNameErrorMessageBy).Text.Trim();
-        public UiElement PasswordFeld() => new UiElement(driver, _passwordFeldBy);
-        public string GetPasswordErrorMessage() => new Message(driver, _passwordErrorMessageBy).Text.Trim();
+        public Field UserNameField() => new Field(driver, _userNameFieldBy);
+        public string GetUserNameErrorMessage() => new Message(driver, _userNameErrorMessageBy).Text;
+        public Field PasswordFeld() => new Field(driver, _passwordFeldBy);
+        public string GetPasswordErrorMessage() => new Message(driver, _passwordErrorMessageBy).Text;
         public Button LoginButton() => new Button(driver, _loginButtonBy);
-        public string GetTopErrorMessage() => new Message(driver, _topErrorMessageBy).Text.Trim();
-        public string GetLoginErrorMessage() => new Message(driver, _loginErrorMessageBy).Text.Trim();
+        public string GetTopErrorMessage() => new Message(driver, _topErrorMessageBy).Text;
+        public string GetLoginErrorMessage() => new Message(driver, _loginErrorMessageBy).Text;
     }
 }

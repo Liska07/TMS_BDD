@@ -8,7 +8,6 @@ namespace SpecFlowProject.Pages
         protected BasePage(IWebDriver driver)
         {
             this.driver = driver;
-           
         }
     }
 }
