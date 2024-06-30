@@ -8,6 +8,6 @@ Below is an overview of the key features and components implemented in this proj
 - Wrappers
 - Page Object Pattern
 - Steps
-- Loadable Component Pattern
+- Cross-browser Testing
 - Test Reporting in Allure
 - NLog

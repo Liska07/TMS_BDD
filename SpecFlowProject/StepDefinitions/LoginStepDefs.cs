@@ -1,8 +1,8 @@
 using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
 using SpecFlowProject.Core;
 using SpecFlowProject.Pages;
 using SpecFlowProject.Steps;
+using SpecFlowProject.Utils;
 
 
 namespace SpecFlowProject.StepDefinitions
@@ -29,7 +29,8 @@ namespace SpecFlowProject.StepDefinitions
         [Given(@"open Login Page")]
         public void OpenLoginPage()
         {
-            _loginPage = new LoginPage(BaseStepDefs.Driver, true);
+            BaseStepDefs.Driver.Navigate().GoToUrl(Configurator.GetBaseURL());
+            _loginPage = new LoginPage(BaseStepDefs.Driver);
         }
 
         [When(@"enter valid user name and password then click Login button")]

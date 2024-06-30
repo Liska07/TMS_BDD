@@ -12,9 +12,9 @@ namespace SpecFlowProject.Pages
         private static readonly By _loginButtonBy = By.Id("button_primary");
         private static readonly By _topErrorMessageBy = By.ClassName("error-on-top");
         private static readonly By _loginErrorMessageBy = By.ClassName("error-text");
-        private string _endPoint = "";
 
-        public LoginPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
+
+        public LoginPage(IWebDriver driver) : base(driver)
         {
         }
         public UiElement UserNameField() => new UiElement(driver, _userNameFieldBy);
@@ -24,23 +24,5 @@ namespace SpecFlowProject.Pages
         public Button LoginButton() => new Button(driver, _loginButtonBy);
         public string GetTopErrorMessage() => new Message(driver, _topErrorMessageBy).Text.Trim();
         public string GetLoginErrorMessage() => new Message(driver, _loginErrorMessageBy).Text.Trim();
-
-        public override string GetEndpoint()
-        {
-            return _endPoint;
-        }
-
-        protected override bool EvaluateLoadedStatus()
-        {
-            try
-            {
-                return LoginButton().Displayed;
-            }
-            catch (Exception ex)
-            {
-                logger.Error("'Login Button' on the 'Login Page' is  not displayed! " + ex);
-                return false;
-            }
-        }
     }
 }

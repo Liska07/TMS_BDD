@@ -22,6 +22,6 @@ Positive and negative tests that check user logging
 		Then top error message is equal to 'Sorry, there was a problem.'
 		And login error message is equal to 'Email/Login or Password is incorrect. Please try again.'
 		Examples:
-		| user name                | password      |
-		| workandreystep@gmail.com | WrongPassword |
-		| WrongUserName            | tmsQAC0401?   |
+		| user name                 | password                  |
+		| SomeUserName              | SomePassword              |
+		| <script>alert(1)</script> | <script>alert(1)</script> |

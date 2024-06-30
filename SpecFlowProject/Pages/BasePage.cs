@@ -1,29 +1,14 @@
-﻿using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium;
-using SpecFlowProject.Utils;
-using NLog;
+﻿using OpenQA.Selenium;
 
 namespace SpecFlowProject.Pages
 {
-    public abstract class BasePage : LoadableComponent<BasePage>
+    public abstract class BasePage
     {
         protected IWebDriver driver;
-        protected Logger logger = LogManager.GetCurrentClassLogger();
-        protected BasePage(IWebDriver driver, bool openPageByUrl = false)
+        protected BasePage(IWebDriver driver)
         {
             this.driver = driver;
-            if (openPageByUrl)
-            {
-                ExecuteLoad();
-                Load();
-            }
-        }
-
-        public abstract string GetEndpoint();
-
-        protected override void ExecuteLoad()
-        {
-            driver.Navigate().GoToUrl(Configurator.GetBaseURL() + GetEndpoint());
+           
         }
     }
 }

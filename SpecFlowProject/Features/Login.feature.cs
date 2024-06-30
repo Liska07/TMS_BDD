@@ -149,8 +149,8 @@ namespace SpecFlowProject.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Negative login with wrong user name or wrong password")]
-        [NUnit.Framework.TestCaseAttribute("workandreystep@gmail.com", "WrongPassword", null)]
-        [NUnit.Framework.TestCaseAttribute("WrongUserName", "tmsQAC0401?", null)]
+        [NUnit.Framework.TestCaseAttribute("SomeUserName", "SomePassword", null)]
+        [NUnit.Framework.TestCaseAttribute("<script>alert(1)</script>", "<script>alert(1)</script>", null)]
         public void NegativeLoginWithWrongUserNameOrWrongPassword(string userName, string password, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
